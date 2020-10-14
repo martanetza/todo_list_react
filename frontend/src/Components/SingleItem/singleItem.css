@@ -1,0 +1,43 @@
+.Single_item {
+  width: 80%;
+  margin: auto;
+  border: 1px solid black;
+  border-radius: 7px;
+  margin-bottom: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.Single_item button {
+  background: transparent;
+  border: none;
+}
+
+.Single_item button svg {
+  width: 1.5em;
+  height: 1.5em;
+  cursor: pointer;
+}
+
+.Single_item button svg:hover path {
+  color: red;
+}
+
+.Modal {
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}

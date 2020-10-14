@@ -1,0 +1,23 @@
+.App {
+  padding-top: 50px;
+  width: 80%;
+  margin: auto;
+  color: #0d1b2a;
+}
+
+.App nav {
+  width: 60%;
+  margin: auto;
+}
+.App nav ul {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+}
+.App nav ul li {
+  margin-left: 20px;
+}
+.App nav ul li a {
+  /* text-decoration: none; */
+  color: black;
+}
