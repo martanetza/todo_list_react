@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import From from "../../../Components/Form/Form";
-import SingleItem from "../../../Components/SingleItem/SingleItem";
+import From from "../../Components/Form/Form";
+import SingleItem from "../../Components/SingleItem/SingleItem";
 
  
 class List extends Component {
