@@ -19,7 +19,7 @@ class SingleItem extends Component {
      };
     fetch(`http://localhost:8080/tasks/${this.props.id}`, requestOptions)
       .then((response) => response.json())
-      .then((data) => this.props.taskToDelete(data));
+      .then((response) => this.props.taskToDelete(response.data));
   }
 
   openModalHandler = () => {

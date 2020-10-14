@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import From from "../../Components/Form/Form";
+import Form from "../../Components/Form/Form";
 import SingleItem from "../../Components/SingleItem/SingleItem";
 
  
@@ -33,19 +33,20 @@ class List extends Component {
     this.setState({
       tasks: tasks,
     });
+    console.log(task)
   };
 
   componentDidMount() {
     fetch("http://localhost:8080/tasks")
       .then((res) => res.json())
-      .then((data) => this.setState({ tasks: data }));
+      .then((res) => this.setState({ tasks: res.data }));
   }
 
   render() {
     return (
       <div className="list">
         <h2>To do tasks</h2>
-        <From getTask={(task) => this.addItemHandler(task)} />
+        <Form getTask={(task) => this.addItemHandler(task)} />
         {this.state.tasks.map((item) => {
           return (
             <SingleItem

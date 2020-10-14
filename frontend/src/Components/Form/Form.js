@@ -22,7 +22,7 @@ class From extends Component {
     };
     fetch("http://localhost:8080/", requestOptions)
       .then((response) => response.json())
-      .then((data) => this.props.getTask(data));
+      .then((response) => this.props.getTask(response.data));
   }
 
   render() {

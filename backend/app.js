@@ -18,11 +18,11 @@ let deletedTasks = [];
 let itemId = 1;
 
 app.get("/tasks", (req, res) => {
-  res.send(tasks);
+  res.send({data: tasks});
 });
 
 app.get("/deletedTasks", (req, res) => {
-  res.send(deletedTasks);
+  res.send({data: deletedTasks});
 });
 
 app.post("/", (req, res) => {
@@ -31,8 +31,7 @@ app.post("/", (req, res) => {
     name: req.body.name,
   };
   tasks.push(task);
-  console.log(tasks);
-  return res.send(task);
+  return res.send({data: task});
 });
 
 app.patch("/tasks/:id", (req, res) => {
@@ -44,8 +43,7 @@ app.patch("/tasks/:id", (req, res) => {
       }
       return task;
   }); 
-  console.log(taskUpdated)
-  return res.send({ data: taskUpdated });
+  return res.send({data: taskUpdated });
 });
 
 app.delete("/tasks/:id", (req, res) => {
@@ -55,7 +53,7 @@ app.delete("/tasks/:id", (req, res) => {
   const index = tasks.indexOf(task);
   tasks.splice(index, 1);
   deletedTasks.push(task);
-  return res.send(task);
+  return res.send({data: task});
 });
 
 app.listen(8080, (error) => {});

@@ -1,10 +1,16 @@
 import React, { Component } from "react";
-import DeletedItem from "../../../Components/DeletedItem/DeletedItem";
+import DeletedItem from "../../Components/DeletedItem/DeletedItem";
 
 class DeletedTasks extends Component{
 
   state = { 
     deletedTasks: []
+  }
+
+  componentDidMount() {
+    fetch("http://localhost:8080/deletedTasks")
+      .then((res) => res.json())
+      .then((res) => this.setState({deletedTasks: res.data}));   
   }
 
   render () {
@@ -17,12 +23,6 @@ class DeletedTasks extends Component{
       }
     </div>
     )
-  }
-
-  componentDidMount() {
-    fetch("http://localhost:8080/deletedTasks")
-      .then((res) => res.json())
-      .then((data) => this.setState({deletedTasks: data}));   
   }
 }
 
