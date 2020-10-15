@@ -3,7 +3,7 @@ import List from "../Pages/List/List";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import DeletedTasks from "../Pages/DeletedTasks/DeletedTasks";
- 
+
 
 class App extends React.Component {
   render() {
@@ -16,7 +16,7 @@ class App extends React.Component {
                 <Link to="/">List</Link>
               </li>
               <li>
-                <Link to="/form">Deleted tasks </Link>
+                <Link to="/deletedTasks">Deleted tasks </Link>
               </li>
             </ul>
           </nav>
@@ -24,7 +24,7 @@ class App extends React.Component {
             <Route exact path="/">
               <List />
             </Route>
-            <Route path="/form">
+            <Route path="/deletedTasks">
               <DeletedTasks />
             </Route>
           </Switch>

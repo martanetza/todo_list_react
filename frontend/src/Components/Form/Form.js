@@ -2,16 +2,13 @@ import React, { Component } from "react";
 import "./form.css";
 import { GrAdd } from 'react-icons/gr';
 
-
 class From extends Component {
   state = {
     taskName: "",
   };
 
-
   saveTaskNameHandler = (event) => {
-    this.setState({taskName: event.target.value });
-
+    this.setState({ taskName: event.target.value });
   };
 
   postTaskHandler = () => {
@@ -40,4 +37,5 @@ class From extends Component {
     );
   }
 }
+
 export default From;

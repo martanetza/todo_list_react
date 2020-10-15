@@ -11,12 +11,12 @@ class SingleItem extends Component {
     },
     taskName: ""
   }
- 
+
   deleteTaskHandler = () => {
     const requestOptions = {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
-     };
+    };
     fetch(`http://localhost:8080/tasks/${this.props.id}`, requestOptions)
       .then((response) => response.json())
       .then((response) => this.props.taskToDelete(response.data));
@@ -52,11 +52,11 @@ class SingleItem extends Component {
       <div className="Single_item">
         <p>name:{this.props.name}</p>
         <div>
-          <button onClick={this.openModalHandler}><AiFillEdit/></button>
+          <button onClick={this.openModalHandler}><AiFillEdit /></button>
           <button onClick={this.deleteTaskHandler}><FaTrashAlt /></button>
         </div>
         <div style={this.state.style} className="Modal">
-          <input type="text" placeholder={this.props.name} onChange={(event) => this.setState({taskName: event.target.value})} />
+          <input type="text" placeholder={this.props.name} onChange={(event) => this.setState({ taskName: event.target.value })} />
           <button onClick={this.updateTaskHandler}>update</button>
         </div>
       </div>

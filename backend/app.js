@@ -9,20 +9,18 @@ app.use(express.json());
 
 app.use(cors());
 
-let tasks = [
- 
-];
+let tasks = [];
 
 let deletedTasks = [];
 
 let itemId = 1;
 
 app.get("/tasks", (req, res) => {
-  res.send({data: tasks});
+  res.send({ data: tasks });
 });
 
 app.get("/deletedTasks", (req, res) => {
-  res.send({data: deletedTasks});
+  res.send({ data: deletedTasks });
 });
 
 app.post("/", (req, res) => {
@@ -31,19 +29,19 @@ app.post("/", (req, res) => {
     name: req.body.name,
   };
   tasks.push(task);
-  return res.send({data: task});
+  return res.send({ data: task });
 });
 
 app.patch("/tasks/:id", (req, res) => {
   let taskUpdated = {};
   tasks = tasks.map(task => {
-      if (task.id === Number(req.params.id)) {
-          taskUpdated = { ...task, ...req.body, id: task.id };
-          return { ...task, ...req.body, id: task.id };
-      }
-      return task;
-  }); 
-  return res.send({data: taskUpdated });
+    if (task.id === Number(req.params.id)) {
+      taskUpdated = { ...task, ...req.body, id: task.id };
+      return { ...task, ...req.body, id: task.id };
+    }
+    return task;
+  });
+  return res.send({ data: taskUpdated });
 });
 
 app.delete("/tasks/:id", (req, res) => {
@@ -53,7 +51,7 @@ app.delete("/tasks/:id", (req, res) => {
   const index = tasks.indexOf(task);
   tasks.splice(index, 1);
   deletedTasks.push(task);
-  return res.send({data: task});
+  return res.send({ data: task });
 });
 
-app.listen(8080, (error) => {});
+app.listen(8080, (error) => { });
